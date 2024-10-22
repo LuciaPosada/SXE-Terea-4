@@ -25,9 +25,15 @@
 
         - Instalamos Apache: ```apt install -y apache2 apache2-utils```
 
+            ![Comando Paso2](/img/paso2_11.png)
+
         - Instalamos MariaDB: ```apt install -y mariadb-server mariadb-client```
 
+            ![Comando Paso2](/img/paso2_10.png)
+
             - Iniciar base de datos: ```service mariadb start```
+
+                ![Comando Paso2](/img/paso2_12.png)
 
             - Asegurar la instalación de MySQL: ```mysql_secure_installation```
 
@@ -51,6 +57,7 @@
 
         - Nos conectamos a la BD como root: ```mysql -u root -p```
 
+        - Desabilitamos autentificacion por  Unix Socket:
             ```
             use mysql;
             update user set plugin='mysql_native_password' where user='root';
@@ -81,3 +88,4 @@
 
             ![Comando Paso2](/img/paso2_3.png)
 
+## Instalar wordpress en el contenedor
