@@ -47,10 +47,12 @@
 
         - Nos conectamos a la BD como root: ```mysql -u root -p```
 
-            > use mysql;
-            > update user set plugin='mysql_native_password' where user='root';
-            > flush privileges;
-            > quit;
+            ```
+            use mysql;
+            update user set plugin='mysql_native_password' where user='root';
+            flush privileges;
+            quit;
+            ```
 
 > [!IMPORTANT]
 > No iniciar la base de datos puede causar ERROR 2002 (HY000)
