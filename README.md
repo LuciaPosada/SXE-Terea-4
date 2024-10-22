@@ -29,10 +29,7 @@
 
             - Iniciar base de datos: ```service mariadb start```
 
-> [!IMPORTANT]
-> No iniciar la base de datos puede causar ERROR 2002 (HY000)
-
-- Asegurar la instalación de MySQL: ```mysql_secure_installation```
+            - Asegurar la instalación de MySQL: ```mysql_secure_installation```
 
         - Instalamos PHP: ```apt install -y php php-mysql libapache2-mod-php```
 
@@ -46,8 +43,6 @@
 
         - Iniciar base de datos: ```service mysql start```
 
-> [!IMPORTANT]
-> No iniciar la base de datos puede causar ERROR 2002 (HY000)
         - Asegurar la instalación de MySQL: ```mysql_secure_installation```
 
         - Nos conectamos a la BD como root: ```mysql -u root -p```
@@ -56,6 +51,9 @@
             > update user set plugin='mysql_native_password' where user='root';
             > flush privileges;
             > quit;
+
+> [!IMPORTANT]
+> No iniciar la base de datos puede causar ERROR 2002 (HY000)
 
 - Comprobacion:
 
