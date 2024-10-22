@@ -35,6 +35,8 @@
 
         - Reiniciamos Apache: ```service apache2 restart```
 
+            ![Comando Paso2](/img/paso2_4.png)
+
     - All in One:
 
         - Instalamos LAMP stack: ```apt install -y lamp-server^```
@@ -44,6 +46,8 @@
         - Iniciar base de datos: ```service mysql start```
 
         - Asegurar la instalación de MySQL: ```mysql_secure_installation```
+
+            ![Comando Paso2](/img/paso2_6.png)
 
         - Nos conectamos a la BD como root: ```mysql -u root -p```
 
@@ -61,11 +65,19 @@
 
     - Apache: ```service apache2 status```
 
+        ![Comando Paso2](/img/paso2_8.png)
+
     - MariaDB/MySQL: ```service mariadb status```
+
+        ![Comando Paso2](/img/paso2_7.png)
 
     - PHP:
 
         - Colocamos una pagina PHP en la carpeta del apache: ```echo "<?php phpinfo(); ?>" | tee /var/www/html/info.php```
 
+            ![Comando Paso2](/img/paso2_9.png)
+
         - Comprobamos en navegador:```http://10.0.9.147:7000/info.php```
+
+            ![Comando Paso2](/img/paso2_3.png)
 
