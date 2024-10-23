@@ -15,7 +15,7 @@
 
 - Acedemos al contenedor: ```docker exec -it cnt_ubuntu sh```
 
-- Actualizamos el repositorio: ```apt update```
+- Actualizamos los repositorios: ```apt update```
 
     ![Comando Paso2](/img/paso2_1.png)
 
