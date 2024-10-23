@@ -6,21 +6,26 @@ En este documento se especifican los pasos a seguir para instalar Wordpress en u
 
 <details>
     <summary>Descargar la imagen de Ubuntu</summary>
+</br>
     
 ```bash
+# De no especificar versión, se descargara la más nueva
 docker pull ubuntu:22.04
 ```
     
 ![Comando Paso1](/img/paso1_1.png)
+> Salida por consola ↑
 
 </details>
 <details>   
     <summary>Crear un contenedor Docker</summary>
+</br>
     
 ```bash
 docker run -d -p 7000:80 --name cnt_ubuntu ubuntu:22.04 tail -f /dev/null
 ```
 ![Comando Paso1](/img/paso1_2.png)
+> Salida por consola ↑
 
 ---
 </details>
