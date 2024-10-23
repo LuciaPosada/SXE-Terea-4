@@ -88,4 +88,75 @@
 
             ![Comando Paso2](/img/paso2_3.png)
 
-## Instalar wordpress en el contenedor
+## 3. Instalar wordpress en el contenedor
+
+- Instalamos depecndencias:
+```
+apt install ghostscript \
+            php-bcmath \
+            php-curl \
+            php-imagick \
+            php-intl \
+            php-json \
+            php-mbstring \
+            php-mysql \
+            php-xml \
+            php-zip
+```
+
+- Creamos un directorio de instalacion:
+```
+mkdir -p /srv/www
+sudo chown www-data: /srv/www
+curl https://wordpress.org/latest.tar.gz | tar zx -C /srv/www
+
+```
+> [!NOTE]
+> para usar el comando curl es necesario instalar cURL ```apt install curl```
+
+- Configuramos Apache:
+
+    - Creamos una pagina: ```nano etc/apache2/sites-available/wordpress.conf```
+
+    Que contenga las siguientes lineas
+
+![Comando Paso3](/img/paso3_.png)
+-
+    - Habilitamos la pagina:
+    ```
+    a2ensite wordpress
+    a2enmod rewrite
+    a2dissite 000-default
+
+    service apache2 reload
+    ```
+- Configuramos la base de datos: ```mysql -u root```
+    ```
+    create database <nombre_BD>;
+    create user <nombre_usuario>@localhost identified by '<contraseña>';
+    grant all privileges on <nombre_BD>.* TO <nombre_usuario>@localhost;
+    fush privileges;
+    exit;
+    ```
+- Configuramos Wordpress para que se conecte a la BD:
+
+    ```
+    cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php
+
+    sed -i 's/database_name_here/<nombre_BD>/' /srv/www/wordpress/wp-config.php
+    sudo -u www-data sed -i 's/username_here/<nombre_usuario>/' /srv/www/wordpress/wp-config.php
+    sed -i 's/password_here/<contraseña>/' /srv/www/wordpress/wp-config.php
+    ```
+
+    - Accedemos a la configuracion de wordpress:```nano /srv/www/wordpress/wp-config.php ```
+
+    Cambiamos las claves por las generadas aleatoriamente en:
+    [wordpress_keys]( https://api.wordpress.org/secret-key/1.1/salt/ )
+
+![Comando Paso3](/img/paso3_.png)
+
+- Configurar WordPress:
+
+![Comando Paso3](/img/paso3_.png)
+
+![Comando Paso3](/img/paso3_.png)
