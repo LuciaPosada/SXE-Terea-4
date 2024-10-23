@@ -116,13 +116,16 @@ curl https://wordpress.org/latest.tar.gz | tar zx -C /srv/www
 
 - Configuramos Apache:
 
-    - Creamos una pagina: ```nano etc/apache2/sites-available/wordpress.conf```
+    - Creamos una pagina: ``nano etc/apache2/sites-available/wordpress.conf``
 
     Que contenga las siguientes lineas
 
 ![Comando Paso3](/img/paso3_.png)
--
+
+> [!NOTE]
+> Para utilizar nano hay es necesario instalarlo ```apt install nano```
     - Habilitamos la pagina:
+
     ```
     a2ensite wordpress
     a2enmod rewrite
@@ -151,12 +154,12 @@ curl https://wordpress.org/latest.tar.gz | tar zx -C /srv/www
     - Accedemos a la configuracion de wordpress:```nano /srv/www/wordpress/wp-config.php ```
 
     Cambiamos las claves por las generadas aleatoriamente en:
-    [wordpress_keys]( https://api.wordpress.org/secret-key/1.1/salt/ )
+    [https://api.wordpress.org/secret-key/1.1/salt/]( https://api.wordpress.org/secret-key/1.1/salt/ )
 
 ![Comando Paso3](/img/paso3_.png)
 
 - Configurar WordPress:
 
-![Comando Paso3](/img/paso3_.png)
+![Comando Paso3](/img/paso3_confWp_1.png)
 
-![Comando Paso3](/img/paso3_.png)
+![Comando Paso3](/img/paso3_confWp_2.png)
