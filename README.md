@@ -126,6 +126,12 @@ apt install -y lamp-server^
 ![Comando Paso2](/img/paso2_2.png)
 > Salida por consola ↑
 
+- Iniciar Apache:
+- 
+```bash
+service apache2 start
+```
+
 - Iniciar base de datos:
   
 ```bash
@@ -210,6 +216,7 @@ rm /var/www/html/info.php
 
 <details>
     <summary>Instalar dependencias</summary>
+<br>
 
 ```bash
 apt install ghostscript \
@@ -228,6 +235,7 @@ apt install ghostscript \
 
 <details>
     <summary>Preparar el entorno para una instalación de WordPress</summary>
+<br>
 
 ```bash
 #Crear un directorio
@@ -303,6 +311,7 @@ service apache2 reload
 <br>
     
 ```bash
+# (en navegador)
 http://<ip>:<puerto>/wp-admin/setup-config.php
 ```
     
@@ -313,6 +322,7 @@ http://<ip>:<puerto>/wp-admin/setup-config.php
 
 <details>
     <summary>Configurar la base de datos</summary>
+<br>
 
 ```bash
 mysql -u root
@@ -336,14 +346,15 @@ exit;
 
 <details>
     <summary>Configurar conexion de Wordpress a la BD</summary>
+<br>
 
 ```bash
 # Copia el archivo de configuración 
 cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php
 ```
-```bash
-# Los siguientes comandos se pueden realizar modificado el archivo de configuracion directamente (ver punto siguiente)
+> Los siguientes comandos ↓ se pueden realizar modificado el archivo de configuracion directamente (ver punto siguiente)
 
+```bash
 # Reemplaza el nombre de la base de datos en el archivo de configuración
 sed -i 's/database_name_here/<nombre_BD>/' /srv/www/wordpress/wp-config.php
 
@@ -358,6 +369,7 @@ sed -i 's/password_here/<contraseña>/' /srv/www/wordpress/wp-config.php
 
 <details>
     <summary>Acceder al archivo configuración de Wordpress</summary>
+<br>
 
 ```bash
 nano /srv/www/wordpress/wp-config.php
@@ -366,14 +378,38 @@ nano /srv/www/wordpress/wp-config.php
 Cambiamos las claves por las generadas aleatoriamente en:
 [https://api.wordpress.org/secret-key/1.1/salt/]( https://api.wordpress.org/secret-key/1.1/salt/ )
 
-![Comando Paso3](/img/paso3_.png)
+![Comando Paso3](/img/paso3_conf.png)
     
 </details>
 
 <details>
     <summary>Configurar WordPress</summary>
+<br>
+
+```bash
+# (en navegador)
+http://<ip>:<puerto>/wp-admin/setup-config.php
+```
+
+En Wordpress tendremos que que configurar la página, dandole titulo, nombre de usuario y contraseña (diferentes a las especificadas en las BD)
  
 ![Comando Paso3](/img/paso3_confWp_1.png)
+> Al final de la configuración saldra la siguiente página ↓
 
 ![Comando Paso3](/img/paso3_confWp_2.png)
 </details>
+
+## (Opcional) Instalacón phpMyAdmin
+
+PhpMyAdmin es una aplicación web que sirve para administrar bases de datos MySQL mediante una interfaz gráfica.
+
+<details>
+    <summary>Instalar phpMyAdmin</summary>
+<br>
+
+```bash
+apt install phpmyadmin
+```
+    
+</details>
+
