@@ -239,6 +239,10 @@ sudo chown www-data: /srv/www
 #Descarga la última versión de WordPress y extraerla en /srv/www
 curl https://wordpress.org/latest.tar.gz | tar zx -C /srv/www
 ```
+
+![Comando Paso3](/img/paso3_curl.png)
+> Salida por consola ↑ (curl)
+
 --- 
 </details>
 
@@ -296,13 +300,13 @@ service apache2 reload
 
 <details>
     <summary>Conprobar acceso a WordPress</summary>
+<br>
     
 ```bash
 http://<ip>:<puerto>/wp-admin/setup-config.php
 ```
     
 ![Comando Paso3](/img/paso3_pruebaWp.png)
-
 >El resultado debería ser el de la imagen
 
 </details>
