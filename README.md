@@ -388,7 +388,7 @@ Cambiamos las claves por las generadas aleatoriamente en:
 
 ```bash
 # (en navegador)
-http://<ip>:<puerto>/wp-admin/setup-config.php
+http://<ip>:<puerto>/wp-admin
 ```
 
 En Wordpress tendremos que que configurar la página, dandole titulo, nombre de usuario y contraseña (diferentes a las especificadas en las BD)
@@ -411,5 +411,19 @@ PhpMyAdmin es una aplicación web que sirve para administrar bases de datos MySQ
 apt install phpmyadmin
 ```
     
+</details>
+
+<details>
+    <summary>Comprobar funcionamiento</summary>
+<br>
+
+```bash
+# (en navegador)
+http://<ip>:<puerto>/phpmyadmin
+```
+
+![Comando Paso3](/img/paso4_compPHP.png)
+>El resultado debería ser el de la imagen
+
 </details>
 
