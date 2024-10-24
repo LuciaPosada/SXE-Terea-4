@@ -422,8 +422,11 @@ apt install phpmyadmin
 http://<ip>:<puerto>/phpmyadmin
 ```
 
-![Comando Paso3](/img/paso4_compPHP.png)
+![Comando Paso3](/img/paso4_compPHP2.png)
 >El resultado debería ser el de la imagen
+
+![Comando Paso3](/img/paso4_compPHP.png)
+>Un vez iniciado sesión apareceran las diferentes BD del servidor
 
 </details>
 
