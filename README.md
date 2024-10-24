@@ -378,7 +378,7 @@ nano /srv/www/wordpress/wp-config.php
 Cambiamos las claves por las generadas aleatoriamente en:
 [https://api.wordpress.org/secret-key/1.1/salt/]( https://api.wordpress.org/secret-key/1.1/salt/ )
 
-![Comando Paso3](/img/paso3_conf.png)
+![Comando Paso3](/img/punto3_conf.png)
     
 </details>
 
