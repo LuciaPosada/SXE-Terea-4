@@ -430,3 +430,7 @@ http://<ip>:<puerto>/phpmyadmin
 
 </details>
 
+## Apuntes finales
+
+>[!NOTE]
+>Los servicios de Apache y MariaDB/MySQL se paran si se detiene el contenedor en el que están alojados. Para poder utilizar Wordpress o phpMyAdmin has de iniciarlos antes. 
