@@ -46,6 +46,7 @@ LAMP es una pila de software de código abierto que se utiliza como infraestruct
 
 <details>
     <summary>Acceder al contenedor</summary>
+</br>
     
 ```bash
 docker exec -it cnt_ubuntu sh
@@ -55,12 +56,11 @@ docker exec -it cnt_ubuntu sh
 
 <details>
     <summary>Actualizar lista de paquetes</summary>
+</br>
     
 ```bash
 apt update
 ```
-
-![Comando Paso2](/img/paso2_1.png)
 
 </details>
 
@@ -77,15 +77,11 @@ apt update
 apt install -y apache2 apache2-utils
 ```
 
-![Comando Paso2](/img/paso2_11.png)
-
 - Instalar MariaDB: 
 
 ```bash
 apt install -y mariadb-server mariadb-client
 ```
-
-![Comando Paso2](/img/paso2_10.png)
 
 - Iniciar base de datos:
 
@@ -119,6 +115,7 @@ service apache2 restart
 
 <details>
     <summary>All in One</summary>
+<br>
     
 - Instalar pila LAMP:
   
@@ -127,6 +124,7 @@ apt install -y lamp-server^
 ```
 
 ![Comando Paso2](/img/paso2_2.png)
+> Salida por consola ↑
 
 - Iniciar base de datos:
   
@@ -141,6 +139,7 @@ mysql_secure_installation
 ```
 
 ![Comando Paso2](/img/paso2_6.png)
+> Salida por consola ↑
 
 - Desabilitar autentificación por Unix Socket:
   
@@ -164,6 +163,7 @@ quit;
 <details>
     <summary>Comprobación</summary>
 <br>
+    
 Apache:
 
 ```bash
@@ -171,6 +171,7 @@ service apache2 status
 ```
 
 ![Comando Paso2](/img/paso2_8.png)
+> Salida por consola ↑
 
 MariaDB/MySQL: 
 
@@ -182,6 +183,7 @@ service mariadb status
 service mysql status
 ```
 ![Comando Paso2](/img/paso2_7.png)
+> Salida por consola ↑ (MariaDB)
 
 PHP:
 
@@ -190,13 +192,12 @@ echo "<?php phpinfo(); ?>" | tee /var/www/html/info.php
 # Crea una página en el servidor web con la configuración actual de PHP
 ```
 
-![Comando Paso2](/img/paso2_9.png)
-
-- Comprobación en navegador: ```bash http://<ip>:<puerto>/info.php```
+- Comprobación en navegador: ```http://<ip>:<puerto>/info.php```
 
 ![Comando Paso2](/img/paso2_3.png)
+> Deberia aparecer esta pagina ↑
 
-> Deberia aparecer esta pagina (arriba)
+- Borrar la página:
 
 ```bash
 rm /var/www/html/info.php
@@ -270,9 +271,9 @@ Que contenga las siguientes lineas:
         Require all granted
     </Directory>
 </VirtualHost>
-```
 
-![Comando Paso3](/img/paso3_.png)
+# Para guardar: Ctrl + X
+```
 
 - Habilitar la página:
 
@@ -300,7 +301,7 @@ service apache2 reload
 http://<ip>:<puerto>/wp-admin/setup-config.php
 ```
     
-![Comando Paso3](/img/paso3.png)
+![Comando Paso3](/img/paso3_pruebaWp.png)
 
 >El resultado debería ser el de la imagen
 
